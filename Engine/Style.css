@@ -1,0 +1,31 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: monospace;
+}
+body a {
+  text-decoration: none;
+  color: red;
+}
+body #head {
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffd0;
+}
+body #page {
+  background-color: white;
+  padding: 10px;
+}
+body a.butn {
+  border: red 1px solid;
+  padding: 2px;
+  background-color: #ffebeb;
+  border-radius: 5px;
+}
+body a.butn:hover {
+  background-color: #ffffeb;
+}
