@@ -15,7 +15,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Vertex/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
 
         <?php if($admin): ?>
 
@@ -34,7 +34,7 @@
         </div>
         <div id="page">
             <script>
-
+                Schedula.Diary.Road.show();
             </script>
         </div>
     </body>

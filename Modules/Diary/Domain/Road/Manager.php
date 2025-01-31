@@ -21,7 +21,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_step desc limit 17;',
+            'select * from %s order by key_day desc limit 17;',
             $name
         ));
 
@@ -46,7 +46,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_step="%s";',
+            'select * from %s where key_day="%s";',
             $name, $keyStep
         ));
 
@@ -68,7 +68,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_step = "%s";',
+            'select * from %s where key_day = "%s";',
             $name, date('Y-m-d')
         ));
 
@@ -89,9 +89,9 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-        unset($data['key_step']);
+        unset($data['key_day']);
 
-        self::update($name, $data, sprintf('key_step="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf('key_day="%s"', $entity->getKey()));
     }
 
     /**
@@ -101,11 +101,11 @@ class Manager extends DomainManager
     {
         $data = [
             'key_day' => date('Y-m-d'),
-            'summary' => '-',
+            'program' => '-',
             'data' => '{}'
         ];
 
-        self::getAdapter()->insert(self::getTableName(), $data);
+        self::insert(self::getTableName(), $data);
 
         return Entity::create($data);
     }
