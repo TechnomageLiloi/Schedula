@@ -13,16 +13,16 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'diary_jobs';
+        return self::getTablePrefix() . 'jobs';
     }
 
-    public static function loadCollection(string $keyStep): Collection
+    public static function loadCollection(string $keyDay): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_step="%s" order by key_job asc;',
-            $name, $keyStep
+            'select * from %s where key_day="%s" order by key_hour asc, key_quarter asc;',
+            $name, $keyDay
         ));
 
         $collection = new Collection();

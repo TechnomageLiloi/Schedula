@@ -3,7 +3,6 @@
 namespace Liloi\Schedula\Modules\Diary\Domain\Jobs;
 
 use Liloi\Tools\Collection as AbstractCollection;
-use Liloi\Schedula\Modules\Degrees\Domain\Degrees\Manager as DegreesManager;
 
 /**
  * @todo: add tests
@@ -28,30 +27,6 @@ class Collection extends AbstractCollection
         }
 
         return $karma;
-    }
-
-    public function getResources(): array
-    {
-        $listDegrees = DegreesManager::getListResource();
-        $resources = [];
-        
-        foreach ($listDegrees as $key => $title)
-        {
-            $resources[$key] = 0;
-        }
-
-        /** @var Entity $job */
-        foreach($this as $job)
-        {
-            if($job->getStatus() != Statuses::SUCCESS)
-            {
-                continue;
-            }
-
-            $resources[$job->getType()] += (int)$job->getKarma();
-        }
-
-        return array_combine($listDegrees, $resources);
     }
 
     public function getByHour(): array

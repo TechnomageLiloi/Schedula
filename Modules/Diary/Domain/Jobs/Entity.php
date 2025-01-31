@@ -20,14 +20,19 @@ use Liloi\Tools\Entity as AbstractEntity;
  */
 class Entity extends AbstractEntity
 {
-    public function getKey(): string
+    public function getKeyDay(): string
     {
-        return $this->getField('key_job');
+        return $this->getField('key_day');
     }
 
-    public function getStep(): string
+    public function getHour(): string
     {
-        return $this->getField('key_step');
+        return $this->getField('key_hour');
+    }
+
+    public function getQuarter(): string
+    {
+        return $this->getField('key_quarter');
     }
 
     public function save(): void
@@ -38,27 +43,6 @@ class Entity extends AbstractEntity
     public function parse(): string
     {
         return Parser::parseString($this->getTitle());
-    }
-
-    public function getTimestamp(): string
-    {
-        return date('G:i', strtotime($this->getKey()));
-    }
-
-    public function getHour(): string
-    {
-        return date('G', strtotime($this->getKey()));
-    }
-
-
-    public function getDay(): string
-    {
-        return date('N', strtotime($this->getStep()));
-    }
-
-    public function getTypeTitle(): string
-    {
-        return Types::getList()[$this->getType()];
     }
 
     public function getStatusTitle(): string
