@@ -1,0 +1,14 @@
+/* @todo: Translate to LESS */
+#application-Quests-edit {
+  padding: 10px;
+}
+#application-Quests-edit table {
+  width: 100%;
+}
+#application-Quests-edit input,
+#application-Quests-edit textarea {
+  width: 100%;
+}
+#application-Quests-edit textarea {
+  height: 300px;
+}

@@ -20,7 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Liloi\\Schedula\\": ["Engine", "Tests"]
+            "Liloi\\Schedula\\": ["Engine", "Tests"],
+            "Liloi\\Schedula\\Modules\\": "Modules"
         }
     }
 }
