@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'diary_road';
+        return self::getTablePrefix() . 'road';
     }
 
     public static function loadCollection(): Collection
@@ -100,7 +100,7 @@ class Manager extends DomainManager
     public static function create(): Entity
     {
         $data = [
-            'key_step' => date('Y-m-d'),
+            'key_day' => date('Y-m-d'),
             'summary' => '-',
             'data' => '{}'
         ];

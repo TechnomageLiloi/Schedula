@@ -12,16 +12,10 @@ class Modules
 {
     public static function collect(APIManager $manager): APIManager
     {
-        /*
-        $manager->add(new Method('Schedula.Levels.Quest.Create', '\Liloi\Schedula\Modules\Levels\API\Quests\Create\Method::execute'));
-        $manager->add(new Method('Schedula.Levels.Quest.Show', '\Liloi\Schedula\Modules\Levels\API\Quests\Show\Method::execute'));
-        $manager->add(new Method('Schedula.Levels.Quest.Edit', '\Liloi\Schedula\Modules\Levels\API\Quests\Edit\Method::execute'));
-        $manager->add(new Method('Schedula.Levels.Quest.Save', '\Liloi\Schedula\Modules\Levels\API\Quests\Save\Method::execute'));
+        $manager->add(new Method('Schedula.Diary.Road.Edit', '\Liloi\Schedula\Modules\Diary\API\Road\Edit\Method::execute'));
+        $manager->add(new Method('Schedula.Diary.Road.Save', '\Liloi\Schedula\Modules\Diary\API\Road\Save\Method::execute'));
+        $manager->add(new Method('Schedula.Diary.Road.Show', '\Liloi\Schedula\Modules\Diary\API\Road\Show\Method::execute'));
 
-        $manager->add(new Method('Schedula.Levels.Tickets.Create', '\Liloi\Schedula\Modules\Levels\API\Tickets\Create\Method::execute'));
-        $manager->add(new Method('Schedula.Levels.Tickets.Edit', '\Liloi\Schedula\Modules\Levels\API\Tickets\Edit\Method::execute'));
-        $manager->add(new Method('Schedula.Levels.Tickets.Save', '\Liloi\Schedula\Modules\Levels\API\Tickets\Save\Method::execute'));
-*/
         return $manager;
     }
 }

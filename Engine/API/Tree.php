@@ -5,6 +5,7 @@ namespace Liloi\Schedula\API;
 use Liloi\API\Manager;
 use Liloi\API\Method;
 use Liloi\Schedula\API\Method as RuneMethod;
+use Liloi\Schedula\Modules\Modules as ModulesManager;
 
 /**
  * @inheritDoc
@@ -30,6 +31,9 @@ class Tree
         if(self::$instance === null)
         {
             $manager = new Manager();
+
+            /* @todo: incorrect structure */
+            $manager = ModulesManager::collect($manager);
 
             self::$instance = new self($manager);
         }
