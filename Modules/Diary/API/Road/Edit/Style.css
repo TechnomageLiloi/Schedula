@@ -1,0 +1,14 @@
+/* @todo: Translate to LESS */
+#application-diary-edit {
+  padding: 10px;
+}
+#application-diary-edit table {
+  width: 100%;
+}
+#application-diary-edit input,
+#application-diary-edit textarea {
+  width: 100%;
+}
+#application-diary-edit textarea {
+  height: 300px;
+}

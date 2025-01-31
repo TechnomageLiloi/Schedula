@@ -1,0 +1,33 @@
+#modules-road-show {
+  padding: 10px;
+  border: gray 3px solid;
+  border-radius: 5px;
+}
+#modules-road-show table {
+  width: 100%;
+  text-align: left;
+  border: gray 1px solid;
+}
+#modules-road-show table td {
+  vertical-align: top;
+}
+#modules-road-show table th {
+  border-top: gray 1px dashed;
+}
+#modules-road-show table p {
+  margin: 0;
+}
+#modules-road-show .current-job {
+  background-color: lightyellow;
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#modules-road-show .problem {
+  border: gray 1px solid;
+  float: left;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #e7ffe0;
+}
