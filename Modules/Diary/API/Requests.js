@@ -20,9 +20,9 @@ Schedula.Diary = {
             });
         },
 
-        edit: function (key_step) {
+        edit: function (keyDay) {
             API.request('Schedula.Diary.Road.Edit', {
-                key_step: key_step
+                key_day: keyDay
             }, function (data) {
                 const wrap = $('#page');
                 wrap.html(data.render);
@@ -32,16 +32,16 @@ Schedula.Diary = {
             });
         },
 
-        save: function (key_step) {
+        save: function (keyDay) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
             const jq_block = $('#application-diary-edit');
             API.request('Schedula.Diary.Road.Save', {
-                key_step: key_step,
+                key_day: keyDay,
                 data: jq_block.find('[name=data]').val(),
-                summary: jq_block.find('[name=summary]').val()
+                program: jq_block.find('[name=program]').val()
             }, function (data) {
                 Schedula.Diary.Road.show();
             }, function () {

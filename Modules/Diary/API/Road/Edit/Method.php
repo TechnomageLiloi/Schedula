@@ -13,8 +13,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-        $entity = DiaryManager::load(self::getParameter('key_step'));
+        $entity = DiaryManager::load(self::getParameter('key_day'));
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
