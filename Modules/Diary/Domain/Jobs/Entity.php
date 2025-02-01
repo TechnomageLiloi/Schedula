@@ -9,9 +9,6 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getTitle()
  * @method void setTitle(string $value)
  *
- * @method string getType()
- * @method void setType(string $value)
- *
  * @method string getStatus()
  * @method void setStatus(string $value)
  *
