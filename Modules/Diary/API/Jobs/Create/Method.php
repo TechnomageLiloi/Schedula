@@ -14,11 +14,11 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-
-        $road = RoadManager::loadCurrent();
-
-        JobsManager::create($road->getKey());
+        JobsManager::create(
+            self::getParameter('key_day'),
+            self::getParameter('key_hour'),
+            self::getParameter('key_quarter')
+        );
         return new Response();
     }
 }

@@ -51,21 +51,27 @@ Schedula.Diary = {
     },
 
     Jobs: {
-        create: function () {
+        create: function (key_day, key_hour, key_quarter) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
-            API.request('Schedula.Diary.Jobs.Create', {}, function (data) {
+            API.request('Schedula.Diary.Jobs.Create', {
+                key_day: key_day,
+                key_hour: key_hour,
+                key_quarter: key_quarter
+            }, function (data) {
                 Schedula.Diary.Road.show();
             }, function () {
 
             });
         },
 
-        edit: function (key_job) {
+        edit: function (key_day, key_hour, key_quarter) {
             API.request('Schedula.Diary.Jobs.Edit', {
-                key_job: key_job
+                key_day: key_day,
+                key_hour: key_hour,
+                key_quarter: key_quarter
             }, function (data) {
                 const wrap = $('#page');
                 wrap.html(data.render);
@@ -75,16 +81,17 @@ Schedula.Diary = {
             });
         },
 
-        save: function (key_job) {
+        save: function (key_day, key_hour, key_quarter) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
             const jq_block = $('#application-diary-edit');
             API.request('Schedula.Diary.Jobs.Save', {
-                key_job: key_job,
+                key_day: key_day,
+                key_hour: key_hour,
+                key_quarter: key_quarter,
                 title: jq_block.find('[name=title]').val(),
-                type: jq_block.find('[name=type]').val(),
                 status: jq_block.find('[name=status]').val(),
                 karma: jq_block.find('[name=karma]').val()
             }, function (data) {

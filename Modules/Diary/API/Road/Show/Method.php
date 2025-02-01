@@ -16,11 +16,12 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         $step = DaysManager::loadCurrent();
-//        $jobs = JobsManager::loadCollection($step->getKey());
+        $schedule = JobsManager::loadSchedule($step->getKey());
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $step
+            'entity' => $step,
+            'schedule' => $schedule
         ]));
 
         return $response;

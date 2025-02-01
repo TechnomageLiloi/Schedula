@@ -10,6 +10,7 @@
 }
 #modules-road-show table td {
   vertical-align: top;
+  border-top: gray 1px dashed;
 }
 #modules-road-show table th {
   border-top: gray 1px dashed;

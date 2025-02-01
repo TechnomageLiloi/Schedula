@@ -14,12 +14,10 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
         $road = RoadManager::loadCurrent();
         $entity = DiaryManager::load($road->getKey(), self::getParameter('key_job'));
 
         $entity->setTitle(self::getParameter('title'));
-        $entity->setType(self::getParameter('type'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setKarma(self::getParameter('karma'));
 
