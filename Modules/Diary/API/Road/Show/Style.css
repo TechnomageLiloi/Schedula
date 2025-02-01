@@ -9,6 +9,7 @@
 }
 #modules-road-show table td {
   vertical-align: top;
+  width: 25%;
 }
 #modules-road-show table p {
   margin: 0;
@@ -29,4 +30,17 @@
 }
 #modules-road-show .job {
   border: gray 1px solid;
+  padding: 5px;
+}
+#modules-road-show .job.to-do {
+  background-color: #f3f3f3;
+}
+#modules-road-show .job.in-hand {
+  background-color: #ffffda;
+}
+#modules-road-show .job.success {
+  background-color: #daffdb;
+}
+#modules-road-show .job.failure {
+  background-color: #ffeded;
 }

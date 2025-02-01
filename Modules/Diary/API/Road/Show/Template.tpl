@@ -18,7 +18,7 @@
 
     <table>
         <tr>
-            <th>\</th>
+            <th style="width: 100px;">\</th>
             <th>:00</th>
             <th>:15</th>
             <th>:30</th>
@@ -32,8 +32,9 @@
                 <?php if($quarter === null): ?>
                     <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.create('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Create</a>
                 <?php else: ?>
-                    <div class="job">
+                    <div class="job <?php echo $quarter->getStatusClass(); ?>">
                         <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.edit('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Edit</a>
+                        [<?php echo $quarter->getKarma(); ?>]
                         <?php echo $quarter->getTitle(); ?>
                     </div>
                 <?php endif; ?>

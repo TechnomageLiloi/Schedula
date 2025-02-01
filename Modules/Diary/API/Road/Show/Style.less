@@ -15,7 +15,7 @@
         td
         {
             vertical-align: top;
-            //border-top: gray 1px dashed;
+            width: 25%;
         }
 
         th
@@ -50,5 +50,26 @@
     .job
     {
         border: gray 1px solid;
+        padding: 5px;
+
+        &.to-do
+        {
+            background-color: #f3f3f3;
+        }
+
+        &.in-hand
+        {
+            background-color: #ffffda;
+        }
+
+        &.success
+        {
+            background-color: #daffdb;
+        }
+
+        &.failure
+        {
+            background-color: #ffeded;
+        }
     }
 }
