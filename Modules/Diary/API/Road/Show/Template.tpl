@@ -24,12 +24,16 @@
             <th>:30</th>
             <th>:45</th>
         </tr>
-    <?php foreach($schedule as $hour => $day): ?>
+    <?php foreach($schedule as $idHour => $hour): ?>
     <tr>
-        <th><?php echo $hour; ?>:</th>
-        <?php foreach($day as $quarter): ?>
+        <th><?php echo $idHour; ?>:</th>
+        <?php foreach($hour as $iqQuarter => $quarter): ?>
             <td>
-                -
+                <?php if($quarter === null): ?>
+                    <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.create('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Create</a>
+                <?php else: ?>
+                    <?php echo $quarter->getTitle(); ?>
+                <?php endif; ?>
             </td>
         <?php endforeach; ?>
     </tr>

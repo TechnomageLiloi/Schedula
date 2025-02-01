@@ -6,7 +6,6 @@ use Liloi\API\Response;
 use Liloi\Schedula\API\Method as SuperMethod;
 use Liloi\Schedula\Modules\Diary\Domain\Jobs\Manager as JobsManager;
 use Liloi\Schedula\Modules\Diary\Domain\Road\Manager as DaysManager;
-use Liloi\Schedula\Modules\Diary\Domain\Jobs\Types as DegreeTypes;
 
 /**
  * Schedula API: Interstate60.Application.Diary.Show

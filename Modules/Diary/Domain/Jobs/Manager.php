@@ -21,8 +21,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_day="%s" order by key_hour asc, key_quarter asc;',
-            $name, $keyDay
+            'select * from %s where key_day between "%s 00:00:00" and "%s 23:59:59" order by key_hour asc, key_quarter asc;',
+            $name, $keyDay, $keyDay
         ));
 
         $collection = new Collection();
@@ -47,6 +47,14 @@ class Manager extends DomainManager
             {
                 $schedule[$hour][$quarter] = null;
             }
+        }
+
+        $jobs = self::loadCollection($keyDay);
+
+        /** @var Entity $job */
+        foreach ($jobs as $job)
+        {
+            $schedule[(int)$job->getKeyHour()][(int)$job->getKeyQuarter()] = $job;
         }
 
         return $schedule;
@@ -143,7 +151,7 @@ class Manager extends DomainManager
             'karma' => 0
         ];
 
-        self::getAdapter()->insert(self::getTableName(), $data);
+        self::insert(self::getTableName(), $data);
 
         return Entity::create($data);
     }

@@ -22,12 +22,12 @@ class Entity extends AbstractEntity
         return $this->getField('key_day');
     }
 
-    public function getHour(): string
+    public function getKeyHour(): string
     {
         return $this->getField('key_hour');
     }
 
-    public function getQuarter(): string
+    public function getKeyQuarter(): string
     {
         return $this->getField('key_quarter');
     }
