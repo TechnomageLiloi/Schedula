@@ -32,7 +32,10 @@
                 <?php if($quarter === null): ?>
                     <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.create('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Create</a>
                 <?php else: ?>
-                    <?php echo $quarter->getTitle(); ?>
+                    <div class="job">
+                        <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.edit('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Edit</a>
+                        <?php echo $quarter->getTitle(); ?>
+                    </div>
                 <?php endif; ?>
             </td>
         <?php endforeach; ?>
