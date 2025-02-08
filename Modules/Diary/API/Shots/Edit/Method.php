@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\Schedula\Modules\Diary\API\Jobs\Edit;
+namespace Liloi\Schedula\Modules\Diary\API\Shots\Edit;
 
 use Liloi\API\Response;
 use Liloi\Schedula\API\Method as SuperMethod;
-use Liloi\Schedula\Modules\Diary\Domain\Jobs\Manager as JobsManager;
-use Liloi\Schedula\Modules\Diary\Domain\Jobs\Statuses as JobsStatuses;
+use Liloi\Schedula\Modules\Diary\Domain\Shots\Manager as ShotsManager;
+use Liloi\Schedula\Modules\Diary\Domain\Shots\Statuses as ShotsStatuses;
 use Liloi\Schedula\Modules\Diary\Domain\Road\Manager as RoadManager;
 
 /**
@@ -15,7 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $entity = JobsManager::load(
+        $entity = ShotsManager::load(
             self::getParameter('key_day'),
             self::getParameter('key_hour'),
             self::getParameter('key_quarter')
@@ -24,7 +24,7 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'statuses' => JobsStatuses::$list,
+            'statuses' => ShotsStatuses::$list,
         ]));
 
         return $response;

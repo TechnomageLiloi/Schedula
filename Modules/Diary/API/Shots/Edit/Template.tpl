@@ -1,7 +1,7 @@
-<link href="<?php echo ROOT_URL; ?>/Engine/API/Jobs/Edit/Style.css" rel="stylesheet" />
+<link href="<?php echo ROOT_URL; ?>/Engine/API/Shots/Edit/Style.css" rel="stylesheet" />
 
 <div id="application-diary-edit">
-    <a href="javascript:void(0)" onclick="Schedula.Diary.Jobs.save('<?php echo $entity->getKeyDay(); ?>', '<?php echo $entity->getKeyHour(); ?>', '<?php echo $entity->getKeyQuarter(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Schedula.Diary.Shots.save('<?php echo $entity->getKeyDay(); ?>', '<?php echo $entity->getKeyHour(); ?>', '<?php echo $entity->getKeyQuarter(); ?>');">Save</a>
     <a href="javascript:void(0)" onclick="Schedula.Diary.Road.show();">Cancel</a>
     <hr/>
     <table>
@@ -18,6 +18,6 @@
         <tr><td>Title</td><td><textarea name="title"><?php echo $entity->getTitle(); ?></textarea></td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="Schedula.Diary.Jobs.save('<?php echo $entity->getKeyDay(); ?>', '<?php echo $entity->getKeyHour(); ?>', '<?php echo $entity->getKeyQuarter(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Schedula.Diary.Shots.save('<?php echo $entity->getKeyDay(); ?>', '<?php echo $entity->getKeyHour(); ?>', '<?php echo $entity->getKeyQuarter(); ?>');">Save</a>
     <a href="javascript:void(0)" onclick="Schedula.Diary.Road.show();">Cancel</a>
 </div>

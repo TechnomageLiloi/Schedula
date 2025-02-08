@@ -50,13 +50,13 @@ Schedula.Diary = {
         }
     },
 
-    Jobs: {
+    Shots: {
         create: function (key_day, key_hour, key_quarter) {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
-            API.request('Schedula.Diary.Jobs.Create', {
+            API.request('Schedula.Diary.Shots.Create', {
                 key_day: key_day,
                 key_hour: key_hour,
                 key_quarter: key_quarter
@@ -68,7 +68,7 @@ Schedula.Diary = {
         },
 
         edit: function (key_day, key_hour, key_quarter) {
-            API.request('Schedula.Diary.Jobs.Edit', {
+            API.request('Schedula.Diary.Shots.Edit', {
                 key_day: key_day,
                 key_hour: key_hour,
                 key_quarter: key_quarter
@@ -87,7 +87,7 @@ Schedula.Diary = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Schedula.Diary.Jobs.Save', {
+            API.request('Schedula.Diary.Shots.Save', {
                 key_day: key_day,
                 key_hour: key_hour,
                 key_quarter: key_quarter,

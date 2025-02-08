@@ -30,10 +30,10 @@
         <?php foreach($hour as $iqQuarter => $quarter): ?>
             <td>
                 <?php if($quarter === null): ?>
-                    <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.create('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Create</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.create('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Create</a>
                 <?php else: ?>
                     <div class="job <?php echo $quarter->getStatusClass(); ?>">
-                        <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Jobs.edit('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Edit</a>
+                        <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.edit('<?php echo $entity->getKey(); ?>', '<?php echo $idHour; ?>', '<?php echo $iqQuarter; ?>');">Edit</a>
                         [<?php echo $quarter->getKarma(); ?>]
                         <?php echo $quarter->getTitle(); ?>
                     </div>
