@@ -13,16 +13,16 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'road';
+        return self::getTablePrefix() . 'problems';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(string $status = Statuses::TODO): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_day desc limit 17;',
-            $name
+            'select * from %s where status="%s" order by key_problem asc;',
+            $name, $status
         ));
 
         $collection = new Collection();

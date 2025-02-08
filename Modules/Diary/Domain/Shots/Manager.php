@@ -145,6 +145,7 @@ class Manager extends DomainManager
             'key_day' => $keyDay,
             'key_hour' => $keyHour,
             'key_quarter' => $keyQuarter,
+            'key_problem' => '1',
             'title' => '-',
             'status' => Statuses::TODO,
             'karma' => 0

@@ -21,17 +21,10 @@
 
         <?php endif; ?>
 
-        <title>Schedula</title>
+        <title>Schedula - <?php echo date('Y-m-d H:i:s'); ?></title>
     </head>
     <body>
-        <div id="head">
-            <!--<a href="javascript:void(0)" class="butn" onclick="Rune.Vertex.show();">Map</a>-->
-            <?php if($admin): ?>
-                <!--<a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.logout();">Logout</a>-->
-            <?php else: ?>
-                <!--<a href="javascript:void(0)" class="butn" onclick="Rune.Security.Password.show();">Login</a>-->
-            <?php endif; ?>
-        </div>
+        <!--<div id="head"></div>-->
         <div id="page">
             <script>
                 Schedula.Diary.Road.show();

@@ -2,11 +2,27 @@
 
 <div id="modules-road-show" class="stylo">
 
+
+
+    <h3>Problems</h3>
+
+    <?php foreach($problems as $problem): ?>
+
+    <div class="problem">
+        <?php echo $problem->getTitle(); ?>
+        <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.edit();">Edit</a>
+    </div>
+
+    <?php endforeach; ?>
+
+    <br/>
+
+    <h3>Day</h3>
+
     <div class="controls">
         <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Road.edit('<?php echo $entity->getKey(); ?>');">Edit step</a>
     </div>
-
-    <h3>Day</h3>
+    <br/>
 
     <div class="data">
         <?php echo $entity->getData(); ?><br/>
