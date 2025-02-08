@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Schedula\Modules\Diary\Domain\Jobs;
+namespace Liloi\Schedula\Modules\Diary\Domain\Shots;
 
 use Liloi\Tools\Collection as AbstractCollection;
 

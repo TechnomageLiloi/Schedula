@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Schedula\Modules\Diary\Domain\Jobs;
+namespace Liloi\Schedula\Modules\Diary\Domain\Shots;
 
 use Liloi\Schedula\Domain\Manager as DomainManager;
 
@@ -13,7 +13,7 @@ class Manager extends DomainManager
      */
     public static function getTableName(): string
     {
-        return self::getTablePrefix() . 'jobs';
+        return self::getTablePrefix() . 'shots';
     }
 
     public static function loadCollection(string $keyDay): Collection
@@ -49,10 +49,10 @@ class Manager extends DomainManager
             }
         }
 
-        $jobs = self::loadCollection($keyDay);
+        $shots = self::loadCollection($keyDay);
 
         /** @var Entity $job */
-        foreach ($jobs as $job)
+        foreach ($shots as $job)
         {
             $schedule[(int)$job->getKeyHour()][(int)$job->getKeyQuarter()] = $job;
         }
