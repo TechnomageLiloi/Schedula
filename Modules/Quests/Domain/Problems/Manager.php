@@ -38,43 +38,21 @@ class Manager extends DomainManager
     /**
      * Load day by key.
      *
-     * @param string $keyStep
+     * @param string $keyProblem
      * @return Entity
      */
-    public static function load(string $keyStep): Entity
+    public static function load(string $keyProblem): Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_day="%s";',
-            $name, $keyStep
+            'select * from %s where key_problem="%s";',
+            $name, $keyProblem
         ));
 
         if(!$row)
         {
             // @todo: throw exception
-        }
-
-        return Entity::create($row);
-    }
-
-    /**
-     * Load current day.
-     *
-     * @return Entity
-     */
-    public static function loadCurrent(): Entity
-    {
-        $name = self::getTableName();
-
-        $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_day = "%s";',
-            $name, date('Y-m-d')
-        ));
-
-        if(empty($row))
-        {
-            return self::create();
         }
 
         return Entity::create($row);
@@ -89,9 +67,9 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-        unset($data['key_day']);
+        unset($data['key_problem']);
 
-        self::update($name, $data, sprintf('key_day="%s"', $entity->getKey()));
+        self::update($name, $data, sprintf('key_problem="%s"', $entity->getKey()));
     }
 
     /**
@@ -100,8 +78,9 @@ class Manager extends DomainManager
     public static function create(): Entity
     {
         $data = [
-            'key_day' => date('Y-m-d'),
+            'title' => 'Enter the problem title',
             'program' => '-',
+            'status' => Statuses::TODO,
             'data' => '{}'
         ];
 

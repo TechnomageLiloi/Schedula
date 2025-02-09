@@ -16,6 +16,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Modules/Diary/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Modules/Quests/API/Requests.js"></script>
 
         <?php if($admin): ?>
 
@@ -24,7 +25,9 @@
         <title>Schedula - <?php echo date('Y-m-d H:i:s'); ?></title>
     </head>
     <body>
-        <!--<div id="head"></div>-->
+        <div id="head">
+            <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.edit();">Edit</a>
+        </div>
         <div id="page">
             <script>
                 Schedula.Diary.Road.show();

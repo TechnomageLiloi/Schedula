@@ -20,6 +20,10 @@ class Modules
         $manager->add(new Method('Schedula.Diary.Shots.Save', '\Liloi\Schedula\Modules\Diary\API\Shots\Save\Method::execute'));
         $manager->add(new Method('Schedula.Diary.Shots.Create', '\Liloi\Schedula\Modules\Diary\API\Shots\Create\Method::execute'));
 
+        $manager->add(new Method('Schedula.Quests.Problems.Edit', '\Liloi\Schedula\Modules\Quests\API\Problems\Edit\Method::execute'));
+        $manager->add(new Method('Schedula.Quests.Problems.Save', '\Liloi\Schedula\Modules\Quests\API\Problems\Save\Method::execute'));
+        $manager->add(new Method('Schedula.Quests.Problems.Create', '\Liloi\Schedula\Modules\Quests\API\Problems\Create\Method::execute'));
+
         return $manager;
     }
 }
