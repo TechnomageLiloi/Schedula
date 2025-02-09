@@ -32,6 +32,16 @@ class Entity extends AbstractEntity
         return $this->getField('key_quarter');
     }
 
+    public function getKeyProblem(): string
+    {
+        return $this->getField('key_problem');
+    }
+
+    public function setKeyProblem($key_problem): void
+    {
+        $this->setField('key_problem', $key_problem);
+    }
+
     public function save(): void
     {
         Manager::save($this);

@@ -91,6 +91,7 @@ Schedula.Diary = {
                 key_day: key_day,
                 key_hour: key_hour,
                 key_quarter: key_quarter,
+                key_problem: jq_block.find('[name=key_problem]').val(),
                 title: jq_block.find('[name=title]').val(),
                 status: jq_block.find('[name=status]').val(),
                 karma: jq_block.find('[name=karma]').val()

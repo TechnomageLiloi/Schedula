@@ -5,6 +5,14 @@
     <a href="javascript:void(0)" onclick="Schedula.Diary.Road.show();">Cancel</a>
     <hr/>
     <table>
+        <tr><td>Problem</td><td>
+            <select name="key_problem">
+                <?php foreach($problems as $key => $value): ?>
+                <option value="<?php echo $key; ?>" <?php if($entity->getKeyProblem() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
+
         <tr><td>Statuses</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>

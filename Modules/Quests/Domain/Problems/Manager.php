@@ -63,6 +63,20 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadActiveList(): array
+    {
+        $collection = self::loadActive();
+        $result = [];
+
+        /** @var Entity $entity */
+        foreach($collection as $entity)
+        {
+            $result[$entity->getKey()] = $entity->getTitle();
+        }
+
+        return $result;
+    }
+
     /**
      * Load day by key.
      *

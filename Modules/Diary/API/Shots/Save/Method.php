@@ -19,6 +19,7 @@ class Method extends SuperMethod
             self::getParameter('key_quarter')
         );
 
+        $entity->setKeyProblem(self::getParameter('key_problem'));
         $entity->setTitle(self::getParameter('title'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setKarma(self::getParameter('karma'));

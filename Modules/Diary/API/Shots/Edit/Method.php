@@ -6,7 +6,7 @@ use Liloi\API\Response;
 use Liloi\Schedula\API\Method as SuperMethod;
 use Liloi\Schedula\Modules\Diary\Domain\Shots\Manager as ShotsManager;
 use Liloi\Schedula\Modules\Diary\Domain\Shots\Statuses as ShotsStatuses;
-use Liloi\Schedula\Modules\Diary\Domain\Road\Manager as RoadManager;
+use Liloi\Schedula\Modules\Quests\Domain\Problems\Manager as ProblemsManager;
 
 /**
  * Schedula API: Interstate60.Application.Diary.Edit
@@ -25,6 +25,7 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
             'statuses' => ShotsStatuses::$list,
+            'problems' => ProblemsManager::loadActiveList()
         ]));
 
         return $response;
