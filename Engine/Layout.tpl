@@ -22,11 +22,11 @@
 
         <?php endif; ?>
 
-        <title>Schedula - <?php echo date('Y-m-d H:i:s'); ?></title>
+        <title>Schedula - <?php echo date('Y-m-d - H:i:s'); ?></title>
     </head>
     <body>
         <div id="head">
-            <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.edit();">Edit</a>
+            <a href="javascript:void(0)" class="butn" onclick="Schedula.Quest.Problems.create();">Create problem</a>
         </div>
         <div id="page">
             <script>

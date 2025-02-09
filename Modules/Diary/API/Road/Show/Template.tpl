@@ -9,8 +9,8 @@
     <?php foreach($problems as $problem): ?>
 
     <div class="problem">
-        <?php echo $problem->getTitle(); ?>
-        <a href="javascript:void(0)" class="butn" onclick="Schedula.Diary.Shots.edit();">Edit</a>
+        <?php echo $problem->getStatusTitle(); ?> - <?php echo $problem->getTitle(); ?>
+        <a href="javascript:void(0)" class="butn" onclick="Schedula.Quest.Problems.edit('<?php echo $problem->getKey(); ?>');">Edit</a>
     </div>
 
     <?php endforeach; ?>

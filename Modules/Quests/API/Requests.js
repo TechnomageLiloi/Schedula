@@ -1,14 +1,12 @@
 Schedula.Quest = {
     Problems: {
-        create: function (key_day, key_hour, key_quarter) {
+        create: function () {
             if (!confirm('Are you sure?')) {
                 return;
             }
 
             API.request('Schedula.Quests.Problems.Create', {
-                key_day: key_day,
-                key_hour: key_hour,
-                key_quarter: key_quarter
+
             }, function (data) {
                 Schedula.Diary.Road.show();
             }, function () {
