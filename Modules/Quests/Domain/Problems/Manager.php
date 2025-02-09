@@ -38,13 +38,22 @@ class Manager extends DomainManager
     public static function loadActive(): Collection
     {
         $name = self::getTableName();
+        $collection = new Collection();
 
         $rows = self::getAdapter()->getArray(sprintf(
             'select * from %s where status in ("%s", "%s") order by key_problem desc;',
             $name, Statuses::TODO, Statuses::IN_HAND
         ));
 
-        $collection = new Collection();
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where status in ("%s", "%s") order by key_problem desc limit 7;',
+            $name, Statuses::SUCCESS, Statuses::FAILURE
+        ));
 
         foreach($rows as $row)
         {
