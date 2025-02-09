@@ -36,6 +36,8 @@ create table schedula_problems
         primary key (key_problem)
 );
 
+insert into schedula_problems(title, program, data) values ('Welcome to Schedula!', '-', '{}');
+
 create table schedula_shots
 (
     key_day date not null,
